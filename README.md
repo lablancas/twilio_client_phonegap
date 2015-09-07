@@ -22,7 +22,7 @@ https://github.com/jefflinwood/TwilioClientPhoneGapExampleApp
 
 ##Instructions
 ```
-cordova plugin add  https://github.com/jefflinwood/twilio_client_phonegap.git
+cordova plugin add  https://github.com/lablancas/twilio_client_phonegap.git
 ```
 
 # iOS only
@@ -30,23 +30,18 @@ cordova plugin add  https://github.com/jefflinwood/twilio_client_phonegap.git
 ##Instructions
 
 ```
- plugman install --platform ios --project platforms/ios --plugin https://github.com/jefflinwood/twilio_client_phonegap.git
+ plugman install --platform ios --project platforms/ios --plugin https://github.com/lablancas/twilio_client_phonegap.git
 
 ```
-
-
-- After installing the Twilio Client plugin, you will need to download and install the Twilio Client SDK for iOS - follow the directions provided after plugman finishes.
 
 # Android only
 
 ## Instructions
 
 ```
-plugman install --platform android --project platforms/android --plugin https://github.com/jefflinwood/twilio_client_phonegap.git
+plugman install --platform android --project platforms/android --plugin https://github.com/lablancas/twilio_client_phonegap.git
 
 ```
-
-- After installing the Twilio Client plugin, you will need to download and install the Twilio Client SDK for Android - follow the directions provided after plugman finishes. Be sure to include all of the library files, or your app will crash after receiving a call.
 
 ## Additional Features
 
