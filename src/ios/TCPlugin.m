@@ -189,12 +189,12 @@
             break;
     }
 
-    CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:state];
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:state];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 -(void)connectionParameters:(CDVInvokedUrlCommand*)command {
-    CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:[self.connection parameters]];
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:[self.connection parameters]];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
@@ -251,8 +251,8 @@
 
 -(void)javascriptCallback:(NSString *)event withArguments:(NSDictionary *)arguments {
     NSDictionary *options   = [NSDictionary dictionaryWithObjectsAndKeys:event, @"callback", arguments, @"arguments", nil];
-    CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:options];
-    result.keepCallback     = [NSNumber numberWithBool:YES];
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:options];
+    pluginResult.keepCallback     = [NSNumber numberWithBool:YES];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callback];
 }
 
@@ -262,8 +262,8 @@
 
 -(void)javascriptErrorback:(NSError *)error {
     NSDictionary *object    = [NSDictionary dictionaryWithObjectsAndKeys:[error localizedDescription], @"message", nil];
-    CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:object];
-    result.keepCallback     = [NSNumber numberWithBool:YES];
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:object];
+    pluginResult.keepCallback     = [NSNumber numberWithBool:YES];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callback];
 }
 
